@@ -7,11 +7,11 @@ namespace Task1_1
         static void Main(string[] args)
         {
             /*
-             * Assuming the input has no mistakes, that means:
-             * 1. User input two numbers
-             * 2. Number b is greater that number a
-             * 3. User input positive numbers
-             */
+            * Assuming the input has no mistakes, that means:
+            * 1. User input two numbers
+            * 2. Number b is greater that number a
+            * 3. User input positive numbers
+            */
 
             Console.WriteLine("Input first number: (a)");
             var inputA = int.Parse(Console.ReadLine());
@@ -29,14 +29,16 @@ namespace Task1_1
 
 
         /// <summary>
-        /// Returns a int list with all the numbers between a range that contains exactly two 'A' on their duodecimal representation
+        /// Returns a int array with all the numbers between a range that contains exactly two 'A' on their duodecimal representation
         /// </summary>
         /// <param name="start">Begining of the range</param>
         /// <param name="end">Ending of the range</param>
         /// <returns></returns>
-        static List<int> FindDoublesAsNumbers(int start, int end)
+        static int[] FindDoublesAsNumbers(int start, int end)
         {
-            var resultNumbers = new List<int>();
+            var tempArray = new int[end - start + 1];
+            var count = 0;
+
             for (var index = start; index <= end; index++)
             {
                 var duodecimalNumber = DecimalBaseToDuodecimalBase(index);
@@ -45,9 +47,18 @@ namespace Task1_1
                 {
                     if(character == 'A') counterA++;
                 }
-                if(counterA == 2) resultNumbers.Add(index);
+
+                if (counterA == 2)
+                {
+                    tempArray[count] = index;
+                    count++;
+                }
             }
-            return resultNumbers;
+
+            var resultArray = new int[count];
+            Array.Copy(tempArray, resultArray, count);
+            
+            return resultArray;
         }
 
         /// <summary>
