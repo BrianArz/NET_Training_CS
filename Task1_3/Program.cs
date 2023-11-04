@@ -19,7 +19,7 @@
             }
 
             Console.WriteLine("\nOriginal Array: ");
-            PrintArray(originalArray, arraySize);
+            PrintArray(originalArray);
 
             for (int i = 0; i < arraySize; i++)
             {
@@ -38,25 +38,38 @@
                 }
             }
 
+            //Delets extra 0's from new array
+            newArray = CutArray(newArray, newArraySize);
+
             Console.WriteLine("\nNew Array with no duplicates: ");
-            PrintArray(newArray, newArraySize);
+            PrintArray(newArray);
 
         }
 
         /// <summary>
-        /// Print specified length of a given array
+        /// Prints array
+        /// </summary>
+        /// <param name="array"></param>
+        static void PrintArray(int[] array)
+        {
+            var stringArray = string.Join(",", array);
+            Console.WriteLine($"[ {stringArray} ]");
+        }
+
+        /// <summary>
+        /// Cuts array into specified length
         /// </summary>
         /// <param name="array"></param>
         /// <param name="arrayLength"></param>
-        static void PrintArray(int[] array, int arrayLength)
+        /// <returns></returns>
+        static int[] CutArray(int[] array, int arrayLength)
         {
             var newArray = new int[arrayLength];
             for (int i = 0; i < arrayLength; i++)
             {
                 newArray[i] = array[i];
             }
-            var stringArray = string.Join(",", newArray);
-            Console.WriteLine($"[ {stringArray} ]");
+            return newArray;
         }
     }
 }
