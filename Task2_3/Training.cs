@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.IO;
+using System.Security.Cryptography;
 
 namespace Task2_3
 {
@@ -50,6 +51,25 @@ namespace Task2_3
             }
 
             return true;
+        }
+
+        public Training Clone()
+        {
+            var clonedTraining = new Training();
+            foreach (var element in LecturesAndLessons)
+            {
+                if (element is Lecture lecture)
+                {
+                    clonedTraining.Add(new Lecture(lecture.Description, lecture.Topic));
+                }
+                else if (element is PracticalLesson practical)
+                {
+                    clonedTraining.Add(new PracticalLesson(practical.Description, practical.TaskLink, practical.SolutionLink));
+                }
+            }
+
+            clonedTraining.Description = Description;
+            return clonedTraining;
         }
     }
 }

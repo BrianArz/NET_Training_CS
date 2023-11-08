@@ -43,6 +43,9 @@
             Console.WriteLine($"Training is practical? =  {training.IsPractical()}");
             Console.WriteLine($"\nTraining two is practical? {trainingTwo.IsPractical()}");
 
+            //Clone Check
+            var clonedTraing = trainingTwo.Clone();
+            Console.WriteLine($"\nCloned Training is practical? {clonedTraing.IsPractical()}");
         }
     }
 }
