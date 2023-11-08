@@ -11,7 +11,7 @@ namespace Task2_1
             X = x;
             Y = y;
             Z = z;
-            Mass = mass >= 0 ? mass : 0;
+            Mass = mass;
         }
 
         public int X
