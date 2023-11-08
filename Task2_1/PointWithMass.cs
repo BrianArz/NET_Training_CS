@@ -37,5 +37,10 @@
             get => _mass;
             set => _mass = value >= 0 ? value : 0;
         }
+
+        public bool IsZero()
+        {
+            return X == 0 && Y == 0 && Z == 0;
+        }
     }
 }
