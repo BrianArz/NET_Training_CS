@@ -20,6 +20,15 @@
 
             //Distance between Point One and Point Two
             Console.WriteLine($"\nDistance between Point One and Point Two = {pointOne.CalculateDistanceTo(pointTwo)}");
+
+            //Modified Point Two
+            pointTwo.X = 0;
+            pointTwo.Y = 0;
+            pointTwo.Z = 0;
+            pointTwo.Mass = 17.5;
+            Console.WriteLine($"\nModified Point Two: X = {pointTwo.X} ; Y = {pointTwo.Y} ; Z = {pointTwo.Z} ; Mass = {pointTwo.Mass}");
+            Console.WriteLine($"Modified Point Two, IsZero: {pointTwo.IsZero()}");
+
         }
     }
 }
