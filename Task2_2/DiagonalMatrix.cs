@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection.Metadata.Ecma335;
+
 namespace Task2_2
 {
     internal class DiagonalMatrix
@@ -43,6 +45,47 @@ namespace Task2_2
                 sum += _mainDiagonal[index];
             }
             return sum;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if(obj is not DiagonalMatrix matrix)
+                return false;
+
+            if(matrix.Size != Size)
+                return false;
+
+            for (var index = 0; index < Size; index++)
+            {
+                if (matrix[index, index] != _mainDiagonal[index])
+                    return false;
+            }
+
+            return true;
+        }
+
+        public override string ToString()
+        {
+            var output = "";
+            for (var index = 0; index < Size; index++)
+            {
+                for (var subindex = 0; subindex < Size; subindex++)
+                {
+                    if (index == subindex)
+                    {
+                        output += _mainDiagonal[index];
+                    }
+                    else
+                    {
+                        output += "0";
+                    }
+
+                    output += "\t";
+                }
+
+                output += "\n";
+            }
+            return output;
         }
     }
 }
