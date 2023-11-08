@@ -59,6 +59,21 @@ namespace Task2_2
 
             //Equals Check
             Console.WriteLine($"\nDiagonal One equals Diagonal Two? = {diagonalOne.Equals(diagonalTwo)}");
+
+            //Extended Matrix
+            var extendedMatrix = diagonalOne.ExtendMatrix(diagonalTwo);
+            Console.WriteLine("\nExtended Matrix (Matrix One + Matrix Two):");
+            Console.WriteLine(extendedMatrix.ToString());
+
+            //Small Matrix
+            var diagonalFour = new DiagonalMatrix(8, 9, 10);
+            Console.WriteLine("\nSmall Matrix:");
+            Console.WriteLine(diagonalFour.ToString());
+
+            //Extended Matrix
+            var smallExtendedMatrix = diagonalOne.ExtendMatrix(diagonalFour);
+            Console.WriteLine("\nSmall Extended Matrix (Matrix One + Small Matrix)");
+            Console.WriteLine(smallExtendedMatrix.ToString());
         }
 
         private static void PrintMainDiagional(DiagonalMatrix diagonal)
