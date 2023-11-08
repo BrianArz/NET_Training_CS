@@ -5,23 +5,21 @@
         static void Main(string[] args)
         {
             //Test Constructor
-            var pointOne = new PointWithMass(1,2,3,4);
+            var pointOne = new PointWithMass(7,8,2,4);
 
-            pointOne.Mass = -2;
-            pointOne.X = 3;
-            pointOne.Y = 4;
-            pointOne.Z = 5;
+            //Point two with negative mass
+            var pointTwo = new PointWithMass(20, 2, -3, -5.2);
 
+            //Point One and IsZero validation
             Console.WriteLine($"Point One: X = {pointOne.X} ; Y = {pointOne.Y} ; Z = {pointOne.Z} ; Mass = {pointOne.Mass}");
-            Console.WriteLine($"First check, IsZero: {pointOne.IsZero()}");
+            Console.WriteLine($"Point One, IsZero: {pointOne.IsZero()}");
 
-            pointOne.Mass = 4.5;
-            pointOne.X = 0;
-            pointOne.Y = 0;
-            pointOne.Z = 0;
+            //Point Two and IsZero validation
+            Console.WriteLine($"\nPoint Two: X = {pointTwo.X} ; Y = {pointTwo.Y} ; Z = {pointTwo.Z} ; Mass = {pointTwo.Mass}");
+            Console.WriteLine($"Point Two, IsZero: {pointTwo.IsZero()}");
 
-            Console.WriteLine($"\nPoint One: X = {pointOne.X} ; Y = {pointOne.Y} ; Z = {pointOne.Z} ; Mass = {pointOne.Mass}");
-            Console.WriteLine($"Second check, IsZero: {pointOne.IsZero()}");
+            //Distance between Point One and Point Two
+            Console.WriteLine($"\nDistance between Point One and Point Two = {pointOne.CalculateDistanceTo(pointTwo)}");
         }
     }
 }

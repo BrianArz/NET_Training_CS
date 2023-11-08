@@ -1,4 +1,5 @@
-﻿namespace Task2_1
+﻿
+namespace Task2_1
 {
     internal class PointWithMass
     {
@@ -41,6 +42,11 @@
         public bool IsZero()
         {
             return X == 0 && Y == 0 && Z == 0;
+        }
+
+        public double CalculateDistanceTo(PointWithMass point)
+        {
+            return Math.Sqrt(Math.Pow((point.X - X), 2) + Math.Pow((point.Y - Y), 2) + Math.Pow((point.Z - Z),2));
         }
     }
 }
