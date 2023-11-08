@@ -8,6 +8,9 @@ namespace Task2_2
         {
             //Test constructor
             var diagonalOne = new DiagonalMatrix(1, 2, 3, 4, 5);
+            //Test on no parameters -> Verified on debug
+            var diagonalTwo = new DiagonalMatrix();
+
             Console.WriteLine("Original Main Diagional:");
             PrintMainDiagional(diagonalOne);
 
@@ -26,13 +29,16 @@ namespace Task2_2
             diagonalOne[-2, -2] = 10;
 
             //Write checks
-            Console.WriteLine($"\nModified Main Diagional:");
+            Console.WriteLine("\nModified Main Diagional:");
             PrintMainDiagional(diagonalOne);
+
+            //Track check
+            Console.WriteLine($"\nMain diagonal track = {diagonalOne.Track()}");
         }
 
-        static void PrintMainDiagional(DiagonalMatrix diagonal)
+        private static void PrintMainDiagional(DiagonalMatrix diagonal)
         {
-            for (int index = 0; index < diagonal.Size; index++)
+            for (var index = 0; index < diagonal.Size; index++)
             {
                 Console.WriteLine($"MainDiagional[{index}][{index}] = {diagonal[index, index]}");
             }

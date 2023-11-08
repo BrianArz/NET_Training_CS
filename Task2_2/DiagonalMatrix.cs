@@ -8,7 +8,14 @@ namespace Task2_2
 
         public DiagonalMatrix(params int[] elements)
         {
-            _mainDiagonal = elements ?? Array.Empty<int>(); 
+            if (elements.Length == 0)
+            {
+                _mainDiagonal = Array.Empty<int>();
+            }
+            else
+            {
+                _mainDiagonal = elements;
+            }
         }
 
         public int this[int i, int j]
@@ -28,5 +35,14 @@ namespace Task2_2
             }
         }
 
+        public int Track()
+        {
+            var sum = 0;
+            for (int index = 0; index < Size; index++)
+            {
+                sum += _mainDiagonal[index];
+            }
+            return sum;
+        }
     }
 }
