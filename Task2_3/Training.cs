@@ -3,14 +3,38 @@
     internal class Training
     {
         public string? Description { get; set; }
-        public Lecture[] Lectures { get; set; }
-        public PracticalLesson[] PracticalLessons { get; set;}
+        public object[]? LecturesAndLessons { get; set; }
 
-        public Training(string? description, Lecture[] lectures, PracticalLesson[] practicalLessons)        {
-            Description = description;
-            Lectures = lectures;
-            PracticalLessons = practicalLessons;
+        public Training()
+        {
         }
 
+        public Training(string? description, object[] lecturesAndLessons)        {
+            Description = description;
+            LecturesAndLessons = lecturesAndLessons;
+        }
+
+        public void Add(object lecutureOrLesson)
+        {
+            var currentSize = 0;
+            if (LecturesAndLessons != null)
+            {
+                currentSize = LecturesAndLessons.Length;
+            }
+            var newSize = currentSize + 1;
+            var tempArray = new object[newSize];
+
+            if (currentSize > 0)
+            {
+                for (int index = 0; index < currentSize; index++)
+                {
+                    tempArray[index] = LecturesAndLessons[index];
+                }
+            }
+
+            tempArray[newSize - 1] = lecutureOrLesson;
+
+            LecturesAndLessons = tempArray;
+        }
     }
 }
