@@ -1,4 +1,6 @@
-﻿namespace Task2_3
+﻿using System.Security.Cryptography;
+
+namespace Task2_3
 {
     internal class Training
     {
@@ -35,6 +37,19 @@
             tempArray[newSize - 1] = lecutureOrLesson;
 
             LecturesAndLessons = tempArray;
+        }
+
+        public bool IsPractical()
+        {
+            if (LecturesAndLessons == null)
+                return false;
+
+            foreach (var element in LecturesAndLessons)
+            {
+                if(element is Lecture) return false;
+            }
+
+            return true;
         }
     }
 }

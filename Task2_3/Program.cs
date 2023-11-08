@@ -8,7 +8,7 @@
             var methodsLecture = new Lecture(null, "Methods in C#");
 
             //Lecture Two
-            var indentifiersLecture = new Lecture("Identifiers Lecture Description", "Identifiers in C#");
+            var indetifiersLecture = new Lecture("Identifiers Lecture Description", "Identifiers in C#");
 
             //Lecture Three
             var classesLecture = new Lecture("Classes Lecture Description", null);
@@ -28,9 +28,20 @@
             var training = new Training("Training Description", methodsObject);
 
             //Add Check
-            training.Add(indentifiersLecture);
+            training.Add(indetifiersLecture);
             training.Add(identifiersLesson);
             training.Add(classesLecture);
+
+            var trainingTwo = new Training("Training Two Description", null);
+            
+            //Training Two
+            trainingTwo.Add(methodsLesson);
+            trainingTwo.Add(identifiersLesson);
+            trainingTwo.Add(classesLesson);
+
+            //Is Practical Check
+            Console.WriteLine($"Training is practical? =  {training.IsPractical()}");
+            Console.WriteLine($"\nTraining two is practical? {trainingTwo.IsPractical()}");
 
         }
     }
