@@ -67,19 +67,11 @@ namespace Task2_2
         public override string ToString()
         {
             var output = "";
-            for (var index = 0; index < Size; index++)
+            for (var rowIndex = 0; rowIndex < Size; rowIndex++)
             {
-                for (var subindex = 0; subindex < Size; subindex++)
+                for (var columnIndex = 0; columnIndex < Size; columnIndex++)
                 {
-                    if (index == subindex)
-                    {
-                        output += _mainDiagonal[index];
-                    }
-                    else
-                    {
-                        output += "0";
-                    }
-
+                    output += rowIndex == columnIndex ? _mainDiagonal[rowIndex] : 0;
                     output += "\t";
                 }
 
