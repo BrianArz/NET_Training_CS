@@ -1,7 +1,4 @@
-﻿
-using System.Reflection.Metadata.Ecma335;
-
-namespace Task2_2
+﻿namespace Task2_2
 {
     internal class DiagonalMatrix
     {
@@ -78,21 +75,6 @@ namespace Task2_2
                 output += "\n";
             }
             return output;
-        }
-
-        public DiagonalMatrix ExtendMatrix(DiagonalMatrix matrix)
-        {
-            var maxSize = Math.Max(matrix.Size, Size);
-            var extendedMatrix = new int[maxSize];
-
-            for (var index = 0; index < maxSize; index++)
-            {
-                var firstValue = index < Size ? _mainDiagonal[index] : 0;
-                var secondValue = index < matrix.Size ? matrix[index, index] : 0;
-                extendedMatrix[index] = firstValue + secondValue;
-            }
-
-            return new DiagonalMatrix(extendedMatrix);
         }
     }
 }

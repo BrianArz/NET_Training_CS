@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace Task2_2
+﻿namespace Task2_2
 {
     internal class Program
     {
@@ -61,9 +59,9 @@ namespace Task2_2
             Console.WriteLine($"\nDiagonal One equals Diagonal Two? = {diagonalOne.Equals(diagonalTwo)}");
 
             //Extended Matrix
-            var extendedMatrix = diagonalOne.ExtendMatrix(diagonalTwo);
+            var sumedMatrix = diagonalOne.SumMatrix(diagonalTwo);
             Console.WriteLine("\nExtended Matrix (Matrix One + Matrix Two):");
-            Console.WriteLine(extendedMatrix.ToString());
+            Console.WriteLine(sumedMatrix.ToString());
 
             //Small Matrix
             var diagonalFour = new DiagonalMatrix(8, 9, 10);
@@ -71,7 +69,7 @@ namespace Task2_2
             Console.WriteLine(diagonalFour.ToString());
 
             //Extended Matrix
-            var smallExtendedMatrix = diagonalOne.ExtendMatrix(diagonalFour);
+            var smallExtendedMatrix = diagonalOne.SumMatrix(diagonalFour);
             Console.WriteLine("\nSmall Extended Matrix (Matrix One + Small Matrix)");
             Console.WriteLine(smallExtendedMatrix.ToString());
         }
