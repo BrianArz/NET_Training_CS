@@ -1,51 +1,43 @@
-﻿using System.IO;
-using System.Security.Cryptography;
-
-namespace Task2_3
+﻿namespace Task2_3
 {
-    internal class Training
+    internal class Training : TrainingElements
     {
-        public string? Description { get; set; }
-        public object[]? LecturesAndLessons { get; set; }
+        public Lesson[]? LecturesAndPractical { get; set; }
 
-        public Training()
+        public Training(string? description, Lesson[] lecturesAndPracticals) : base(description)
         {
+            LecturesAndPractical = lecturesAndPracticals;
         }
 
-        public Training(string? description, object[] lecturesAndLessons)        {
-            Description = description;
-            LecturesAndLessons = lecturesAndLessons;
-        }
-
-        public void Add(object lecutureOrLesson)
+        public void Add(Lesson lecutureOrPractical)
         {
             var currentSize = 0;
-            if (LecturesAndLessons != null)
+            if (LecturesAndPractical != null)
             {
-                currentSize = LecturesAndLessons.Length;
+                currentSize = LecturesAndPractical.Length;
             }
             var newSize = currentSize + 1;
-            var tempArray = new object[newSize];
+            var tempArray = new Lesson[newSize];
 
             if (currentSize > 0)
             {
                 for (int index = 0; index < currentSize; index++)
                 {
-                    tempArray[index] = LecturesAndLessons[index];
+                    tempArray[index] = LecturesAndPractical[index];
                 }
             }
 
-            tempArray[newSize - 1] = lecutureOrLesson;
+            tempArray[newSize - 1] = lecutureOrPractical;
 
-            LecturesAndLessons = tempArray;
+            LecturesAndPractical = tempArray;
         }
 
         public bool IsPractical()
         {
-            if (LecturesAndLessons == null)
+            if (LecturesAndPractical == null)
                 return false;
 
-            foreach (var element in LecturesAndLessons)
+            foreach (var element in LecturesAndPractical)
             {
                 if(element is Lecture) return false;
             }
@@ -55,17 +47,10 @@ namespace Task2_3
 
         public Training Clone()
         {
-            var clonedTraining = new Training();
-            foreach (var element in LecturesAndLessons)
+            var clonedTraining = new Training(null, null);
+            foreach (var element in LecturesAndPractical)
             {
-                if (element is Lecture lecture)
-                {
-                    clonedTraining.Add(new Lecture(lecture.Description, lecture.Topic));
-                }
-                else if (element is PracticalLesson practical)
-                {
-                    clonedTraining.Add(new PracticalLesson(practical.Description, practical.TaskLink, practical.SolutionLink));
-                }
+                clonedTraining.Add(element);
             }
 
             clonedTraining.Description = Description;

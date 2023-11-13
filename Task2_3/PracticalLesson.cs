@@ -1,14 +1,12 @@
 ﻿namespace Task2_3
 {
-    internal class PracticalLesson
+    internal class PracticalLesson : Lesson
     {
-        public string? Description { get; set; }
         public string? TaskLink { get; set; }
         public string? SolutionLink { get; set; }
 
-        public PracticalLesson(string? description, string? taskLink, string? solutionLink)
+        public PracticalLesson(string? description, string? taskLink, string? solutionLink) : base(description)
         {
-            Description = description;
             TaskLink = taskLink;
             SolutionLink = solutionLink;
         }

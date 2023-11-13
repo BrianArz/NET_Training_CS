@@ -1,13 +1,11 @@
 ﻿namespace Task2_3
 {
-    internal class Lecture
+    internal class Lecture : Lesson
     {
-        public string? Description { get; set; }
         public string? Topic { get; set; }
 
-        public Lecture(string? description, string? topic)
+        public Lecture(string? description, string? topic) : base(description)
         {
-            Description = description;
             Topic = topic;
         }
     }
