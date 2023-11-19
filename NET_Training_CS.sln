@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET_Training_CS", "NET_Training_CS\NET_Training_CS.csproj", "{4635C588-87C0-49D0-B00F-9252DCDF3283}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1_2", "Task1_2\Task1_2.csproj", "{915298A4-997B-4078-AFFE-C356717DD371}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1_1", "Task1_1\Task1_1.csproj", "{9160ACF3-445E-4610-A53D-BD3FC3A9EFFC}"
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4635C588-87C0-49D0-B00F-9252DCDF3283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4635C588-87C0-49D0-B00F-9252DCDF3283}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4635C588-87C0-49D0-B00F-9252DCDF3283}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4635C588-87C0-49D0-B00F-9252DCDF3283}.Release|Any CPU.Build.0 = Release|Any CPU
 		{915298A4-997B-4078-AFFE-C356717DD371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{915298A4-997B-4078-AFFE-C356717DD371}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{915298A4-997B-4078-AFFE-C356717DD371}.Release|Any CPU.ActiveCfg = Release|Any CPU
