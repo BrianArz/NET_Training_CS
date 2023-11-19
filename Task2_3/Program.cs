@@ -23,7 +23,7 @@
             var classesPractical = new PracticalLesson("Classes Lesson Description", null, "cs.com/classes-solution");
 
             //Object
-            var methodsObject = new Lesson[] {methodsLecture, methodsPractical};
+            var methodsObject = new Lesson[] { methodsLecture, methodsPractical };
 
             var training = new Training("Training Description", methodsObject);
 
@@ -33,7 +33,7 @@
             training.Add(classesLecture);
 
             var trainingTwo = new Training("Training Two Description", null);
-            
+
             //Training Two
             trainingTwo.Add(methodsPractical);
             trainingTwo.Add(identifiersPractical);
@@ -46,6 +46,16 @@
             //Clone Check
             var clonedTraing = trainingTwo.Clone();
             Console.WriteLine($"\nCloned Training is practical? {clonedTraing.IsPractical()}");
+
+            //Deep cloning test
+            var originalLecture = new Lecture("This is an original lecture", "Deep Cloning");
+            var clonedLecture = (Lecture)originalLecture.Clone();
+
+            clonedLecture.Description = "This is a cloned lecture";
+            clonedLecture.Topic = "Deep Cloning Cloned Topic";
+
+            Console.WriteLine($"\nOriginal lecture description: {originalLecture.Description} , topic: {originalLecture.Topic}");
+            Console.WriteLine($"\nCloned lecture description: {clonedLecture.Description} , topic: {clonedLecture.Topic}");
         }
     }
 }

@@ -10,5 +10,10 @@
             TaskLink = taskLink;
             SolutionLink = solutionLink;
         }
+
+        public override Lesson Clone()
+        {
+            return new PracticalLesson(Description, TaskLink, SolutionLink);
+        }
     }
 }

@@ -47,13 +47,12 @@
 
         public Training Clone()
         {
-            var clonedTraining = new Training(null, null);
+            var clonedTraining = new Training(Description, null);
             foreach (var element in LecturesAndPractical)
             {
-                clonedTraining.Add(element);
+                clonedTraining.Add(element.Clone());
             }
 
-            clonedTraining.Description = Description;
             return clonedTraining;
         }
     }

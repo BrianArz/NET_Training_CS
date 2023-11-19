@@ -2,8 +2,10 @@
 {
     internal abstract class Lesson : TrainingElements
     {
-        protected Lesson(string? description) : base (description)
+        protected Lesson(string? description) : base(description)
         {
         }
+
+        public abstract Lesson Clone();
     }
 }

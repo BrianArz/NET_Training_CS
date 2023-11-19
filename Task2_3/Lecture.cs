@@ -8,5 +8,10 @@
         {
             Topic = topic;
         }
+
+        public override Lesson Clone()
+        {
+            return new Lecture(Description, Topic);
+        }
     }
 }
