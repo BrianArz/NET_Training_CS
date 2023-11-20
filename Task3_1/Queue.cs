@@ -1,10 +1,10 @@
 ﻿namespace Task3_1
 {
-    internal class Queue<T>: IQueue<T>
+    public class Queue<T>: IQueue<T>
     {
-        private int _head;
+        private readonly int _head;
         private int _tail;
-        private int _capacity;
+        private readonly int _capacity;
         private T[] _queue;
 
         public Queue(int capacity)
@@ -28,18 +28,12 @@
             if (_head == _tail)
                 throw new InvalidOperationException("Queue is empty");
 
-            for (int index = 0; index < _tail - 1; index++)
+            var newQueue = new T[_capacity];
+            for (var index = 0; index < _tail - 1; index++)
             {
-                _queue[index] = _queue[index + 1];
+                newQueue[index] = _queue[index + 1];
             }
-
-            //Second approach where I can get rid of tail item 
-            //var newQueue = new T[_capacity];
-            //for (int index = 0; index < _tail - 1; index++)
-            //{
-            //    newQueue[index] = _queue[index + 1];
-            //}
-            //_queue = newQueue;
+            _queue = newQueue;
 
             _tail--;
         }
@@ -53,7 +47,7 @@
         public string PrintQueue()
         {
             var result = "";
-            for (int index = 0; index < _tail; index++)
+            for (var index = 0; index < _tail; index++)
             {
                 result += "[" + _queue[index] + "]";
             }
